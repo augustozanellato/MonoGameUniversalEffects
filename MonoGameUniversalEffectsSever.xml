@@ -1,0 +1,8 @@
+<service>
+  <id>MGUES</id>
+  <name>MonoGameUniversalEffectsServer</name>
+  <description>MonoGameUniversalEffectsServer</description>
+  <executable>c:\MonoGameUniversalEffectsServer\MonoGameUniversalEffects.Server.exe</executable>
+  <arguments></arguments>
+  <logmode>rotate</logmode>
+</service>
