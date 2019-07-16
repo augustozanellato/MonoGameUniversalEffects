@@ -18,5 +18,5 @@ using a remote service on a Vagrant box to compile the shader.
 5. Click on the "Content" element under the section "Project"
 6. Click on "References" which is the last voice under the "Properties" section
 7. Click on "Add" and select ```MonoGameUniversalEffects.Pipeline.dll``` from the directory ```Pipeline Extension``` which was contained the client.zip you extracted earlier.
-8. For any .fx file you want to compile with MonoGameUniversalEffects check that its Processor is set to ```Remote Effects Processor - MonoGameUniversalEffects```.
+8. For each .fx file you want to compile with MonoGameUniversalEffects check that its Processor is set to ```Remote Effects Processor - MonoGameUniversalEffects```.
 9. Enjoy!
