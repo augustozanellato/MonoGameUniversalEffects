@@ -79,6 +79,7 @@ namespace MonoGameUniversalEffects.RemoteEffectServer
 			string[] platforms =
 			{
 				"DesktopGL",
+				"MacOSX",
 				"Android",
 				"iOS",
 				"tvOS",
