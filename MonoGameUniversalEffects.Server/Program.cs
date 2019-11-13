@@ -97,13 +97,21 @@ namespace MonoGameUniversalEffects.RemoteEffectServer
 				Path.Combine(programFilesDirectory, "MSBuild", "MonoGame", "v3.0", "Tools", "2MGFX.exe");
 			startInfo.WorkingDirectory = tempOutput;
 			startInfo.CreateNoWindow = true;
+			startInfo.UseShellExecute = false;
+			startInfo.RedirectStandardError = true;
 			var profile = platforms.Contains(platform) ? "OpenGL" : "DirectX_11";
 			startInfo.Arguments = $"./{tempPath} ./{xnb} /Profile:{profile}";
-			var process = Process.Start(startInfo);
+			var process = new Process {StartInfo = startInfo};
+			process.Start();
 			try
 			{
 				process.WaitForExit();
-				if (File.Exists(Path.Combine(tempOutput, xnb)))
+				if (process.ExitCode != 0)
+				{
+					error = process.StandardError.ReadToEnd();
+					Console.WriteLine(error);
+				} 
+				else if (File.Exists(Path.Combine(tempOutput, xnb)))
 				{
 					return File.ReadAllBytes(Path.Combine(tempOutput, xnb));
 				}
