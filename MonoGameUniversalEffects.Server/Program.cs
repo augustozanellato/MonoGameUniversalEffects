@@ -64,6 +64,7 @@ namespace MonoGameUniversalEffects.RemoteEffectServer
 				while (true)
 				{
 					//Do nothing
+					Thread.Sleep(1000); //Fix for #3
 				}
 			}
 			finally
